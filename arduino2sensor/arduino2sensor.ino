@@ -1,6 +1,8 @@
 /*
+ * 
+* By Ben Bament
+* Multiple ultrasonic parking sensors. Based on:
 * Ultrasonic Sensor HC-SR04 and Arduino Tutorial
-*
 * Crated by Dejan Nedelkovski,
 * www.HowToMechatronics.com
 *
