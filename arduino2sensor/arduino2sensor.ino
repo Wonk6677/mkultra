@@ -19,6 +19,7 @@ long duration;
 long duration1;
 int distance;
 int distance1;
+int finaldistance;
 
 void setup() {
 pinMode(trigPin, OUTPUT);// Sets the trigPin as an Output
@@ -44,6 +45,8 @@ duration = pulseIn(echoPin, HIGH);
 // Calculating the distance
 distance= duration*0.034/2;
 
+delayMicroseconds(2);
+
 // Clears the trigPin
 digitalWrite(trigPin1, LOW);
 delayMicroseconds(2);
@@ -57,11 +60,13 @@ digitalWrite(trigPin1, LOW);
 duration1 = pulseIn(echoPin1, HIGH);
 
 // Calculating the distance
-distance1= duration1*0.034/2;
+distance1 = duration1*0.034/2;
+
+finaldistance = min(distance,distance1);
 
 // Prints the distance on the Serial Monitor
-Serial.print("Distance sensor 1: ");
-Serial.println(distance);
-Serial.print("Distance sensor 2: ");
-Serial.println(distance1);
+Serial.print("Distance sensor: ");
+Serial.println(finaldistance);
+delay(250);
+
 }
